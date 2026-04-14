@@ -35,9 +35,11 @@
     }
 
     .logo-icon {
-      font-size: 2.5rem;
       display: block;
-      margin-bottom: 12px;
+      width: 72px;
+      height: 72px;
+      border-radius: 18px;
+      margin: 0 auto 12px;
     }
 
     header h1 {
@@ -170,7 +172,7 @@
      HEADER
 ══════════════════════════════════════════════════════ -->
 <header>
-  <span class="logo-icon">🥗</span>
+  <img class="logo-icon" src="/icon.png" alt="Micro Macro Tracker icon" />
   <h1>Micro Macro Tracker</h1>
   <p>by Micro Macro Nutri Labs &nbsp;·&nbsp; micromacronutrilabs.com</p>
 
@@ -196,34 +198,44 @@
     <h3>Data we collect</h3>
     <ul>
       <li><strong>Account information</strong> – your email address and display name when you register or sign in with Google or Apple.</li>
-      <li><strong>Food &amp; nutrition data</strong> – meals and nutrients you log within the App, stored locally on your device.</li>
+      <li><strong>Food &amp; nutrition data</strong> – meals, nutrients, and food logs you enter within the App. This data is stored locally on your device and, if cloud sync is enabled, synced to Firebase Firestore under your account.</li>
+      <li><strong>Health &amp; body data</strong> – personal data you optionally enter such as weight, height, age, sex, and body fat percentage, used solely to calculate your personalised nutritional targets.</li>
+      <li><strong>Workout &amp; fitness data</strong> – workout programs, exercise logs, and session history you create in the App, stored locally and optionally synced via Firebase Firestore.</li>
+      <li><strong>Food photos</strong> – if you use the AI food analysis feature, the photo you take or select is sent to Google's Gemini API for analysis. Photos are not stored by us after the analysis is complete.</li>
       <li><strong>Authentication tokens</strong> – short-lived tokens managed by Firebase Authentication to keep you signed in securely.</li>
+      <li><strong>Subscription status</strong> – your in-app purchase and subscription status is managed by RevenueCat. We receive only an anonymised entitlement status (active/inactive), not payment card details.</li>
     </ul>
 
     <h3>Data we do NOT collect</h3>
     <ul>
       <li>We do not collect precise location data.</li>
-      <li>We do not collect payment information directly (handled by Apple / Google).</li>
+      <li>We do not collect payment card or banking information directly (handled by Google Play / Apple App Store via RevenueCat).</li>
       <li>We do not track your activity across other apps or websites.</li>
+      <li>We do not sell, rent, or share your personal data with third parties for marketing purposes.</li>
     </ul>
 
     <h3>How we use your data</h3>
     <ul>
       <li>To authenticate you and secure your account.</li>
-      <li>To store and display your personal nutrition log within the App.</li>
-      <li>We do not sell, rent, or share your personal data with third parties for marketing purposes.</li>
+      <li>To store, sync, and display your personal nutrition, health, and fitness logs.</li>
+      <li>To calculate personalised nutritional targets based on body data you provide.</li>
+      <li>To perform AI-powered food analysis when you submit a photo (data sent to Google Gemini API and not retained).</li>
+      <li>To manage your subscription entitlement via RevenueCat.</li>
     </ul>
 
     <h3>Third-party services</h3>
     <p>The App uses the following third-party services, each governed by their own privacy policies:</p>
     <ul>
       <li><strong>Firebase Authentication</strong> (Google LLC) – account management and secure sign-in.</li>
+      <li><strong>Firebase Firestore</strong> (Google LLC) – optional cloud storage and sync of your nutrition and workout data.</li>
       <li><strong>Google Sign-In</strong> – optional OAuth sign-in via your Google account.</li>
       <li><strong>Sign in with Apple</strong> – optional OAuth sign-in via your Apple ID.</li>
+      <li><strong>Google Gemini API</strong> (Google LLC) – AI-powered food photo analysis. Food photos are transmitted to Google's servers for processing when you use this feature.</li>
+      <li><strong>RevenueCat</strong> – subscription and in-app purchase management. RevenueCat processes anonymised purchase receipts to verify your entitlement status.</li>
     </ul>
 
     <h3>Data retention &amp; deletion</h3>
-    <p>Locally stored nutrition data remains on your device until you uninstall the App or clear its data. To delete your account and associated authentication data, use the "Delete account" option in the App settings or contact us at the address below.</p>
+    <p>Locally stored data remains on your device until you uninstall the App or clear its data. Cloud-synced data stored in Firebase Firestore is retained until you delete your account. To delete your account and all associated data, use the "Delete account" option in the App settings or contact us at the address below.</p>
 
     <h3>Children's privacy</h3>
     <p>The App is not directed at children under 13. We do not knowingly collect personal information from children.</p>
@@ -231,7 +243,7 @@
     <h3>Changes to this policy</h3>
     <p>We may update this policy from time to time. The effective date below will be updated accordingly. Continued use of the App after changes constitutes acceptance.</p>
 
-    <p class="effective-date">Effective date: 4 March 2026</p>
+    <p class="effective-date">Effective date: 14 April 2026</p>
   </section>
 
 
@@ -300,7 +312,7 @@
     <p>For privacy requests, account deletion, or any legal enquiries, please contact:</p>
     <p style="margin-top: 12px;">
       <strong>Micro Macro Nutri Labs</strong><br />
-      <a href="mailto:micromacronutrilabs@gmail.com">micromacronutrilabs@gmail.com</a>
+      <a href="mailto:info@micromacronutrilabs.com">info@micromacronutrilabs.com</a>
     </p>
   </section>
 
