@@ -10,5 +10,9 @@
   },
   "compatibility_flags": [
     "nodejs_compat"
+  ],
+  "routes": [
+    { "pattern": "micromacronutrilabs.com/*", "zone_name": "micromacronutrilabs.com" },
+    { "pattern": "www.micromacronutrilabs.com/*", "zone_name": "micromacronutrilabs.com" }
   ]
 }
