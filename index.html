@@ -1024,12 +1024,14 @@
     <h3>Data we collect</h3>
     <ul>
       <li><strong>Account information</strong> – your email address and display name when you register or sign in with Google or Apple.</li>
-      <li><strong>Food &amp; nutrition data</strong> – meals, nutrients, and food logs you enter within the App. This data is stored locally on your device and, if cloud sync is enabled, synced to Firebase Firestore under your account.</li>
+      <li><strong>Food &amp; nutrition data</strong> – meals, nutrients, and food logs you enter within the App. This data is stored locally on your device and automatically synced to Firebase Firestore while you are signed in.</li>
       <li><strong>Health &amp; body data</strong> – personal data you optionally enter such as weight, height, age, sex, and body fat percentage, used solely to calculate your personalised nutritional targets.</li>
-      <li><strong>Workout &amp; fitness data</strong> – workout programs, exercise logs, and session history you create in the App, stored locally and optionally synced via Firebase Firestore.</li>
+      <li><strong>Workout &amp; fitness data</strong> – workout programs, exercise logs, and session history you create in the App, stored locally and synced via Firebase Firestore while you are signed in.</li>
       <li><strong>Food photos</strong> – if you use the AI food analysis feature, the photo you take or select is sent to Google's Gemini API for analysis. Photos are not stored by us after the analysis is complete.</li>
+      <li><strong>AI assistant queries</strong> – text messages you send to the in-app AI nutrition assistant are transmitted to our backend server for processing. These queries are not stored beyond the duration of your session.</li>
+      <li><strong>Voice input</strong> – if you use voice food logging, your speech is processed by your device's built-in speech recognition. Audio is not transmitted to or stored by us.</li>
       <li><strong>Authentication tokens</strong> – short-lived tokens managed by Firebase Authentication to keep you signed in securely.</li>
-      <li><strong>Subscription status</strong> – your in-app purchase and subscription status is managed by RevenueCat. We receive only an anonymised entitlement status (active/inactive), not payment card details.</li>
+      <li><strong>Subscription status</strong> – your in-app purchase status is managed by RevenueCat. Your account identifier is shared with RevenueCat to verify your entitlement; payment card details are handled solely by Google Play or the Apple App Store and are never visible to us.</li>
     </ul>
 
     <h3>Data we do NOT collect</h3>
@@ -1046,6 +1048,7 @@
       <li>To store, sync, and display your personal nutrition, health, and fitness logs.</li>
       <li>To calculate personalised nutritional targets based on body data you provide.</li>
       <li>To perform AI-powered food analysis when you submit a photo (data sent to Google Gemini API and not retained).</li>
+      <li>To process AI assistant queries via our backend server.</li>
       <li>To manage your subscription entitlement via RevenueCat.</li>
     </ul>
 
@@ -1053,11 +1056,11 @@
     <p>The App uses the following third-party services, each governed by their own privacy policies:</p>
     <ul>
       <li><strong>Firebase Authentication</strong> (Google LLC) – account management and secure sign-in.</li>
-      <li><strong>Firebase Firestore</strong> (Google LLC) – optional cloud storage and sync of your nutrition and workout data.</li>
+      <li><strong>Firebase Firestore</strong> (Google LLC) – cloud storage and sync of your nutrition and workout data while signed in.</li>
       <li><strong>Google Sign-In</strong> – optional OAuth sign-in via your Google account.</li>
       <li><strong>Sign in with Apple</strong> – optional OAuth sign-in via your Apple ID.</li>
       <li><strong>Google Gemini API</strong> (Google LLC) – AI-powered food photo analysis. Food photos are transmitted to Google's servers for processing when you use this feature.</li>
-      <li><strong>RevenueCat</strong> – subscription and in-app purchase management. RevenueCat processes anonymised purchase receipts to verify your entitlement status.</li>
+      <li><strong>RevenueCat</strong> – subscription and in-app purchase management. Your account identifier is shared with RevenueCat to verify purchase entitlements.</li>
     </ul>
 
     <h3>Data retention &amp; deletion</h3>
@@ -1069,7 +1072,7 @@
     <h3>Changes to this policy</h3>
     <p>We may update this policy from time to time. The effective date below will be updated accordingly. Continued use of the App after changes constitutes acceptance.</p>
 
-    <p class="effective-date">Effective date: 14 April 2026</p>
+    <p class="effective-date">Effective date: 15 April 2026</p>
   </section>
 
   <!-- Health Disclaimer -->
