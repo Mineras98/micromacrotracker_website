@@ -1015,6 +1015,7 @@
       <li><strong>Workout &amp; fitness data</strong> – workout programs, exercise logs, and session history you create in the App, stored locally and synced via Firebase Firestore while you are signed in.</li>
       <li><strong>Food photos</strong> – if you use the AI food analysis feature, the photo you take or select is sent to Google's Gemini API for analysis. Photos are not stored by us after the analysis is complete.</li>
       <li><strong>AI assistant queries</strong> – text messages you send to the in-app AI nutrition assistant are transmitted to our backend server for processing. These queries are not stored beyond the duration of your session.</li>
+      <li><strong>Device location (optional)</strong> – if you use the tap water mineral suggestion feature, the App requests your device's GPS location once to suggest a suitable tap water mineral profile for your region. This location data is not stored on our servers or on your device; it is used only in-session to produce the suggestion. The reverse-geocoding (place name lookup) uses your device's built-in geocoding service.</li>
       <li><strong>Voice input</strong> – if you use voice food logging, your speech is processed by your device's built-in speech recognition. Audio is not transmitted to or stored by us.</li>
       <li><strong>Authentication tokens</strong> – short-lived tokens managed by Firebase Authentication to keep you signed in securely.</li>
       <li><strong>Subscription status</strong> – your in-app purchase status is managed by RevenueCat. Your account identifier is shared with RevenueCat to verify your entitlement; payment card details are handled solely by Google Play or the Apple App Store and are never visible to us.</li>
@@ -1022,7 +1023,7 @@
 
     <h3>Data we do NOT collect</h3>
     <ul>
-      <li>We do not collect precise location data.</li>
+      <li>We do not store location data. The optional tap water mineral suggestion feature accesses your GPS location in-session only and does not retain or transmit that data to our servers.</li>
       <li>We do not collect payment card or banking information directly (handled by Google Play / Apple App Store via RevenueCat).</li>
       <li>We do not track your activity across other apps or websites.</li>
       <li>We do not sell, rent, or share your personal data with third parties for marketing purposes.</li>
@@ -1058,7 +1059,7 @@
     <h3>Changes to this policy</h3>
     <p>We may update this policy from time to time. The effective date below will be updated accordingly. Continued use of the App after changes constitutes acceptance.</p>
 
-    <p class="effective-date">Effective date: 15 April 2026</p>
+    <p class="effective-date">Effective date: 13 May 2026</p>
   </section>
 
   <!-- Health Disclaimer -->
