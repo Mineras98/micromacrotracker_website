@@ -1,4 +1,5 @@
 # Micro Macro Tracker — https://micromacronutrilabs.com
+# CoachIn1 — https://micromacronutrilabs.com/coachin1/
 
 User-agent: *
 Allow: /
