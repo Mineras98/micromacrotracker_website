@@ -1,0 +1,641 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>CoachIn1 – Nutrition &amp; Training Coaching App</title>
+  <meta name="description" content="CoachIn1 lets fitness and nutrition coaches build meal and training plans, assign them to clients, and follow their clients' logged workouts and meals — all in one app." />
+
+  <link rel="canonical" href="https://micromacronutrilabs.com/coachin1/" />
+  <link rel="icon" href="/coachin1/icon.png" />
+
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="CoachIn1" />
+  <meta property="og:title" content="CoachIn1 – Coach your clients' nutrition and training in one app" />
+  <meta property="og:description" content="Build meal and training plans, invite clients by email, and see what they actually ate and lifted. For coaches and their clients." />
+  <meta property="og:url" content="https://micromacronutrilabs.com/coachin1/" />
+  <meta property="og:image" content="https://micromacronutrilabs.com/coachin1/icon.png" />
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="CoachIn1" />
+  <meta name="twitter:description" content="Nutrition and training coaching app for coaches and their clients." />
+  <meta name="twitter:image" content="https://micromacronutrilabs.com/coachin1/icon.png" />
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "MobileApplication",
+    "name": "CoachIn1",
+    "operatingSystem": "Android",
+    "applicationCategory": "HealthApplication",
+    "url": "https://micromacronutrilabs.com/coachin1/",
+    "image": "https://micromacronutrilabs.com/coachin1/icon.png",
+    "description": "CoachIn1 is a coaching app for nutrition and fitness coaches. Coaches build meal plans (foods with calories, protein, carbs and fat) and training plans (strength and cardio sessions), invite clients by email and assign plans to them. Clients follow their plans, log workouts set by set, and record skipped or extra foods so their coach sees what actually happened.",
+    "featureList": [
+      "Meal plan builder with macros",
+      "Training plan builder (strength & cardio)",
+      "Reusable plan library",
+      "Client invites by email",
+      "Workout logging (sets, reps, weight, cardio)",
+      "Meal deviation logging (skipped / extra foods)",
+      "Coach view of client logs"
+    ],
+    "publisher": {
+      "@type": "Organization",
+      "name": "Micro Macro Nutri Labs",
+      "url": "https://micromacronutrilabs.com/"
+    }
+  }
+  </script>
+
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --bg:            #0b1a16;
+      --surface:       #12261f;
+      --surface2:      #183229;
+      --border:        #24453a;
+      --primary:       #2089dc;
+      --primary-light: #5fb0f0;
+      --primary-dark:  #1a6fb3;
+      --brand:         #0f4c3a;
+      --green:         #22c55e;
+      --green-light:   #4ade80;
+      --amber:         #fbbf24;
+      --text:          #e2e8f0;
+      --muted:         #94a3b8;
+      --heading:       #f1f5f9;
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      background: var(--bg);
+      color: var(--text);
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+      font-size: 16px;
+      line-height: 1.7;
+    }
+
+    a { color: var(--primary-light); text-decoration: none; }
+    a:hover { text-decoration: underline; }
+    ::selection { background: rgba(32,137,220,0.35); color: var(--heading); }
+
+    /* ── Nav ─────────────────────────────────────────── */
+    nav {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      background: rgba(11, 26, 22, 0.92);
+      backdrop-filter: blur(12px);
+      border-bottom: 1px solid var(--border);
+      padding: 0 24px;
+      height: 60px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .nav-brand {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      font-weight: 700;
+      color: var(--heading);
+      font-size: 1rem;
+    }
+    .nav-brand:hover { text-decoration: none; }
+
+    .nav-links { display: flex; align-items: center; gap: 28px; list-style: none; }
+    .nav-links a { color: var(--muted); font-size: 0.88rem; transition: color .2s; }
+    .nav-links a:hover { color: var(--text); text-decoration: none; }
+
+    @media (max-width: 600px) {
+      .nav-links .hide-mobile { display: none; }
+    }
+
+    /* ── Hero ────────────────────────────────────────── */
+    .hero {
+      background: linear-gradient(160deg, #0f4c3a 0%, #0b1a16 60%, #0b1a24 100%);
+      padding: 80px 24px 70px;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .hero::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: radial-gradient(ellipse 70% 50% at 50% 0%, rgba(34,197,94,0.16) 0%, transparent 70%);
+      pointer-events: none;
+    }
+
+    .hero > * { position: relative; }
+
+    .hero-icon {
+      width: 88px;
+      height: 88px;
+      border-radius: 22px;
+      margin-bottom: 24px;
+      box-shadow: 0 18px 40px rgba(0,0,0,0.45);
+    }
+
+    .hero-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: rgba(34,197,94,0.12);
+      border: 1px solid rgba(34,197,94,0.35);
+      border-radius: 100px;
+      padding: 5px 14px;
+      font-size: 0.82rem;
+      color: var(--green-light);
+      font-weight: 600;
+      margin-bottom: 24px;
+    }
+
+    .hero h1 {
+      font-size: clamp(2rem, 5vw, 3.2rem);
+      font-weight: 800;
+      color: var(--heading);
+      line-height: 1.15;
+      letter-spacing: -0.03em;
+      max-width: 700px;
+      margin: 0 auto 20px;
+    }
+
+    .hero h1 em {
+      font-style: normal;
+      background: linear-gradient(90deg, var(--green-light), var(--primary-light));
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+
+    .hero p {
+      font-size: 1.1rem;
+      color: var(--muted);
+      max-width: 560px;
+      margin: 0 auto;
+    }
+
+    /* ── Sections ────────────────────────────────────── */
+    .section-label {
+      text-align: center;
+      font-size: 0.78rem;
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--green-light);
+      margin-bottom: 12px;
+    }
+
+    .section-title {
+      text-align: center;
+      font-size: clamp(1.5rem, 3vw, 2rem);
+      font-weight: 800;
+      color: var(--heading);
+      letter-spacing: -0.02em;
+      margin-bottom: 12px;
+    }
+
+    .section-sub {
+      text-align: center;
+      color: var(--muted);
+      font-size: 0.95rem;
+      max-width: 540px;
+      margin: 0 auto 48px;
+    }
+
+    .features-section {
+      padding: 72px 24px;
+      max-width: 1040px;
+      margin: 0 auto;
+    }
+
+    .roles {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 20px;
+    }
+
+    @media (max-width: 720px) {
+      .roles { grid-template-columns: 1fr; }
+    }
+
+    .role-card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      padding: 28px;
+    }
+
+    .role-card h3 {
+      font-size: 1.1rem;
+      font-weight: 700;
+      color: var(--heading);
+      margin-bottom: 16px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .role-list { list-style: none; display: flex; flex-direction: column; gap: 14px; }
+
+    .role-list li { display: flex; gap: 12px; }
+
+    .role-list .ic { font-size: 1.3rem; flex-shrink: 0; line-height: 1.4; }
+
+    .role-list strong { display: block; color: var(--heading); font-size: 0.92rem; }
+
+    .role-list span.d { color: var(--muted); font-size: 0.85rem; line-height: 1.6; }
+
+    /* ── How it works ────────────────────────────────── */
+    .steps-section {
+      background: linear-gradient(135deg, #0f4c3a 0%, #0b1a16 100%);
+      border-top: 1px solid var(--border);
+      border-bottom: 1px solid var(--border);
+      padding: 72px 24px;
+    }
+
+    .steps {
+      max-width: 900px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 16px;
+      counter-reset: step;
+    }
+
+    @media (max-width: 800px) {
+      .steps { grid-template-columns: 1fr 1fr; }
+    }
+
+    @media (max-width: 480px) {
+      .steps { grid-template-columns: 1fr; }
+    }
+
+    .step {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 14px;
+      padding: 20px;
+      counter-increment: step;
+    }
+
+    .step::before {
+      content: counter(step);
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 28px;
+      height: 28px;
+      border-radius: 50%;
+      background: var(--primary);
+      color: #fff;
+      font-weight: 700;
+      font-size: 0.85rem;
+      margin-bottom: 12px;
+    }
+
+    .step h4 { color: var(--heading); font-size: 0.95rem; margin-bottom: 6px; }
+    .step p  { color: var(--muted); font-size: 0.83rem; line-height: 1.6; }
+
+    /* ── Legal sections ──────────────────────────────── */
+    .legal-wrapper {
+      max-width: 780px;
+      margin: 0 auto;
+      padding: 60px 24px 80px;
+    }
+
+    .legal-title {
+      text-align: center;
+      font-size: 1.4rem;
+      font-weight: 800;
+      color: var(--heading);
+      margin-bottom: 32px;
+      letter-spacing: -0.02em;
+    }
+
+    section.legal-card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 14px;
+      padding: 32px 36px;
+      margin-bottom: 28px;
+    }
+
+    section.legal-card h2 {
+      font-size: 1.1rem;
+      font-weight: 700;
+      color: var(--heading);
+      margin-bottom: 18px;
+      padding-bottom: 12px;
+      border-bottom: 1px solid var(--border);
+    }
+
+    section.legal-card h3 {
+      font-size: 0.92rem;
+      font-weight: 600;
+      color: var(--green-light);
+      margin: 20px 0 6px;
+    }
+
+    section.legal-card p,
+    section.legal-card li {
+      font-size: 0.875rem;
+      color: var(--muted);
+    }
+
+    section.legal-card strong { color: var(--text); }
+
+    section.legal-card ul { padding-left: 20px; margin-top: 6px; }
+    section.legal-card li { margin-bottom: 4px; }
+
+    .effective-date { font-size: 0.78rem; color: var(--muted); opacity: 0.6; margin-top: 18px; }
+
+    .warning-box {
+      background: rgba(251, 191, 36, 0.07);
+      border: 1px solid rgba(251, 191, 36, 0.25);
+      border-radius: 8px;
+      padding: 14px 18px;
+      margin-top: 16px;
+      font-size: 0.87rem;
+      color: var(--amber);
+      line-height: 1.6;
+    }
+
+    @media (max-width: 600px) {
+      section.legal-card { padding: 22px 18px; }
+    }
+
+    /* ── Footer ──────────────────────────────────────── */
+    footer {
+      text-align: center;
+      padding: 28px 24px;
+      border-top: 1px solid var(--border);
+      font-size: 0.8rem;
+      color: var(--muted);
+    }
+
+    footer a { color: var(--muted); }
+    footer a:hover { color: var(--text); }
+  </style>
+</head>
+<body>
+
+<nav>
+  <a href="#" class="nav-brand">
+    <img src="/coachin1/icon.png" alt="" style="width:28px;height:28px;border-radius:7px;"> CoachIn1
+  </a>
+  <ul class="nav-links">
+    <li class="hide-mobile"><a href="#features">Features</a></li>
+    <li class="hide-mobile"><a href="#how-it-works">How it works</a></li>
+    <li><a href="#legal">Legal</a></li>
+  </ul>
+</nav>
+
+
+<!-- ══════════════════════════════════════════════════════
+     HERO
+══════════════════════════════════════════════════════ -->
+<section class="hero">
+  <img src="/coachin1/icon.png" alt="CoachIn1 app icon" class="hero-icon" />
+  <div><span class="hero-badge">📱 Coming soon to Android</span></div>
+  <h1>Coach nutrition <em>and</em> training — in one app</h1>
+  <p>CoachIn1 lets coaches build meal and training plans, hand them to clients, and see what was actually eaten and lifted. No spreadsheets, no chat threads full of screenshots.</p>
+</section>
+
+
+<!-- ══════════════════════════════════════════════════════
+     FEATURES
+══════════════════════════════════════════════════════ -->
+<div class="features-section" id="features">
+  <div class="section-label">Built for both sides</div>
+  <h2 class="section-title">One app for coach and client</h2>
+  <p class="section-sub">Coaches plan. Clients follow and log. Everyone sees the same thing.</p>
+
+  <div class="roles">
+    <div class="role-card">
+      <h3>🧑‍🏫 For coaches</h3>
+      <ul class="role-list">
+        <li><span class="ic">🍽️</span><div><strong>Meal plan builder</strong><span class="d">Group foods into meals with amounts, calories, protein, carbs and fat. Daily totals update as you build.</span></div></li>
+        <li><span class="ic">🏋️</span><div><strong>Training plan builder</strong><span class="d">Strength exercises with sets and rep ranges, cardio with duration and intensity, organised into sessions.</span></div></li>
+        <li><span class="ic">📚</span><div><strong>Plan library</strong><span class="d">Save plans as templates and reuse them across clients.</span></div></li>
+        <li><span class="ic">✉️</span><div><strong>Client invites</strong><span class="d">Add a client by name and email — they get an invite and join your roster.</span></div></li>
+        <li><span class="ic">🔎</span><div><strong>Client overview</strong><span class="d">See each client's logged workouts and meal deviations at a glance.</span></div></li>
+      </ul>
+    </div>
+
+    <div class="role-card">
+      <h3>🙋 For clients</h3>
+      <ul class="role-list">
+        <li><span class="ic">📋</span><div><strong>Your plans, always with you</strong><span class="d">The meal and training plan your coach assigned, on your phone.</span></div></li>
+        <li><span class="ic">✅</span><div><strong>Workout logging</strong><span class="d">Log each set's reps and weight, plus cardio sessions, straight from your plan.</span></div></li>
+        <li><span class="ic">🥗</span><div><strong>Meal deviations</strong><span class="d">Skipped a meal item or ate something extra? Log it so your coach knows.</span></div></li>
+        <li><span class="ic">🔐</span><div><strong>Invite-only</strong><span class="d">Client accounts are created by your coach's invite — no public profiles.</span></div></li>
+      </ul>
+    </div>
+  </div>
+</div>
+
+
+<!-- ══════════════════════════════════════════════════════
+     HOW IT WORKS
+══════════════════════════════════════════════════════ -->
+<div class="steps-section" id="how-it-works">
+  <div class="section-label">How it works</div>
+  <h2 class="section-title" style="margin-bottom:40px;">From plan to progress in four steps</h2>
+  <div class="steps">
+    <div class="step"><h4>Coach signs up</h4><p>Create a coach account with your email.</p></div>
+    <div class="step"><h4>Invite clients</h4><p>Enter a client's name and email. They receive an invite to join.</p></div>
+    <div class="step"><h4>Assign plans</h4><p>Build or reuse meal and training plans and assign them to each client.</p></div>
+    <div class="step"><h4>Client logs</h4><p>Clients log workouts and meal deviations; you see them in their profile.</p></div>
+  </div>
+</div>
+
+
+<!-- ══════════════════════════════════════════════════════
+     LEGAL
+══════════════════════════════════════════════════════ -->
+<div class="legal-wrapper" id="legal">
+  <div class="legal-title">Legal &amp; Privacy</div>
+
+  <!-- Privacy Policy -->
+  <section class="legal-card" id="privacy-policy">
+    <h2>🔒 Privacy Policy</h2>
+
+    <h3>Who we are</h3>
+    <p>Micro Macro Nutri Labs (Martin Fabian, see Impressum below) operates the CoachIn1 mobile application ("the App"). The App connects coaches with their clients. This policy explains what data we collect, who can see it, how we use it, and your rights.</p>
+
+    <h3>Data we collect</h3>
+    <ul>
+      <li><strong>Account information</strong> – your email address, your name, and a password. Passwords are stored only in hashed form by our authentication provider and are never visible to us.</li>
+      <li><strong>Client details entered by coaches</strong> – when a coach adds a client, the coach provides the client's name and email address. This is used to send the client an invitation email and to link the client to that coach.</li>
+      <li><strong>Meal plans</strong> – meals and foods with amounts, calories, protein, carbohydrates and fat, created by coaches and assigned to clients.</li>
+      <li><strong>Training plans</strong> – training sessions, exercises, sets, rep ranges, cardio duration, intensity and notes, created by coaches and assigned to clients.</li>
+      <li><strong>Workout logs</strong> – workouts clients record, including date, exercises, sets, repetitions, weights, cardio activities, durations and notes.</li>
+      <li><strong>Meal logs</strong> – foods clients record as skipped or eaten in addition to their plan, with optional calories and notes.</li>
+      <li><strong>Authentication tokens</strong> – short-lived session tokens that keep you signed in. They are stored encrypted on your device.</li>
+      <li><strong>Technical logs</strong> – our hosting provider automatically records technical data such as IP addresses and request timestamps when the App talks to our servers, for security and troubleshooting.</li>
+    </ul>
+    <p style="margin-top:10px;">Workout and meal logs can reveal information about your health and fitness. We process this data only to provide the App's coaching features and only with your consent, which you give by entering it.</p>
+
+    <h3>Data we do NOT collect</h3>
+    <ul>
+      <li>We do not access your location, contacts, camera, photos or microphone.</li>
+      <li>We do not use advertising or analytics SDKs, and we do not track your activity across other apps or websites.</li>
+      <li>We do not collect payment card or banking information. Any payment arrangement between a coach and a client happens outside the App.</li>
+      <li>We do not sell, rent, or share your personal data with third parties for marketing purposes.</li>
+    </ul>
+
+    <h3>Who can see your data</h3>
+    <ul>
+      <li><strong>If you are a client</strong>, every coach you are linked to can see your name, email address, the plans they assigned to you, and your workout and meal logs.</li>
+      <li><strong>If you are a coach</strong>, your name and the plans you assign are visible to the clients you assign them to.</li>
+      <li>No one else using the App can see your data. Access is enforced on the server for every request.</li>
+    </ul>
+
+    <h3>How we use your data</h3>
+    <ul>
+      <li>To create and secure your account and keep you signed in.</li>
+      <li>To send invitation, confirmation and password emails.</li>
+      <li>To store, sync and display plans and logs between coaches and their clients.</li>
+      <li>To keep the service secure and fix technical problems.</li>
+    </ul>
+
+    <h3>Legal bases (GDPR)</h3>
+    <ul>
+      <li><strong>Performance of a contract</strong> (Art. 6(1)(b) GDPR) – providing the App and your account.</li>
+      <li><strong>Consent</strong> (Art. 6(1)(a) and Art. 9(2)(a) GDPR) – workout and meal logs that may contain health-related data. You can withdraw consent at any time by deleting the data or your account.</li>
+      <li><strong>Legitimate interests</strong> (Art. 6(1)(f) GDPR) – security and technical logs.</li>
+      <li>Coaches who enter a client's name and email are responsible for having a lawful basis to do so, typically their existing coaching relationship with that client.</li>
+    </ul>
+
+    <h3>Third-party services</h3>
+    <p>The App uses the following service providers, each governed by their own privacy policies:</p>
+    <ul>
+      <li><strong>Supabase</strong> (Supabase, Inc.) – database hosting, user authentication, server functions and transactional emails (invitations, confirmations, password resets). All App data described above is stored with Supabase.</li>
+      <li><strong>Google Play</strong> (Google LLC) – distribution of the App on Android.</li>
+    </ul>
+    <p style="margin-top:10px;">Where a provider processes data outside the European Economic Area, the transfer is protected by the European Commission's Standard Contractual Clauses or an equivalent safeguard.</p>
+
+    <h3>Data retention &amp; deletion</h3>
+    <ul>
+      <li>Your data is kept for as long as you have an account.</li>
+      <li>When a coach removes a client, the plans that coach made for the client are deleted. If the client is not linked to any other coach, the client profile and all of the client's workout and meal logs are deleted as well.</li>
+      <li>To delete your account and all associated data, use the <a href="/coachin1/account-deletion.html">account deletion page</a> or contact us at the address below. Deletion is completed within 30 days.</li>
+    </ul>
+
+    <h3>Your rights</h3>
+    <p>Under the GDPR you have the right to access, rectify, erase, restrict and port your data, to object to processing, and to withdraw consent at any time. To exercise these rights, contact us at the address below. You also have the right to lodge a complaint with a data protection supervisory authority.</p>
+
+    <h3>Children's privacy</h3>
+    <p>The App is not directed at children under 16. We do not knowingly collect personal information from children.</p>
+
+    <h3>Changes to this policy</h3>
+    <p>We may update this policy from time to time. The effective date below will be updated accordingly. Continued use of the App after changes constitutes acceptance.</p>
+
+    <p class="effective-date">Effective date: 5 October 2026</p>
+  </section>
+
+  <!-- Health Disclaimer -->
+  <section class="legal-card" id="health-disclaimer">
+    <h2>⚕️ Health &amp; Fitness Disclaimer</h2>
+
+    <p>CoachIn1 is a <strong>communication and planning tool</strong> between coaches and their clients. It is not a medical device, and no information in the App constitutes medical advice, diagnosis, or treatment.</p>
+
+    <div class="warning-box">
+      ⚠️ Consult a qualified healthcare professional before starting a new diet or training programme — especially if you have or suspect a medical condition, are pregnant, or are taking medication.
+    </div>
+
+    <h3>Coaches are independent</h3>
+    <p>Coaches using the App are independent of Micro Macro Nutri Labs. We do not employ, vet or verify the qualifications of coaches, and we are not responsible for the plans, advice or content they provide. Any coaching relationship, including fees, is solely between the coach and the client.</p>
+
+    <h3>No liability for health outcomes</h3>
+    <p>To the fullest extent permitted by applicable law, Micro Macro Nutri Labs and its developers shall not be liable for any direct, indirect, incidental, or consequential damages arising from:</p>
+    <ul>
+      <li>Following meal or training plans created in the App.</li>
+      <li>Inaccuracies in nutritional values or other data entered by coaches or clients.</li>
+      <li>Injuries or adverse health effects resulting from exercise or dietary changes.</li>
+      <li>Any use or misuse of the App.</li>
+    </ul>
+  </section>
+
+  <!-- Terms of Use -->
+  <section class="legal-card" id="terms-of-use">
+    <h2>📋 Terms of Use</h2>
+
+    <p>By downloading or using CoachIn1 you agree to these terms. If you do not agree, please uninstall the App.</p>
+
+    <h3>Accounts</h3>
+    <p>Coaches may register an account themselves. Client accounts are created by invitation from a coach. You are responsible for keeping your login credentials confidential and for all activity under your account.</p>
+
+    <h3>Coach responsibilities</h3>
+    <ul>
+      <li>Only invite people who have agreed to be coached by you and to have their data processed in the App.</li>
+      <li>You are solely responsible for the plans and advice you provide and for complying with any professional rules that apply to you.</li>
+      <li>Fees and contracts with your clients are outside the App and are your own responsibility.</li>
+    </ul>
+
+    <h3>Acceptable use</h3>
+    <p>You may not use the App for anything unlawful, upload content that infringes the rights of others, attempt to access data of users you are not linked to, or interfere with the App's operation. You may not reverse-engineer, copy, or redistribute the App.</p>
+
+    <h3>Your content</h3>
+    <p>You keep ownership of the plans, logs and other content you enter. You grant us the right to store and display that content to the users you share it with, solely to operate the App.</p>
+
+    <h3>Termination</h3>
+    <p>You can stop using the App and delete your account at any time. We may suspend or terminate accounts that violate these terms.</p>
+
+    <h3>Limitation of liability</h3>
+    <p>The App is provided <strong>"as is"</strong> without warranties of any kind, express or implied. Micro Macro Nutri Labs is not liable for any loss of data, service interruptions, or other damages arising from use of the App, except where liability cannot be excluded by law (such as for intent or gross negligence).</p>
+
+    <h3>Governing law</h3>
+    <p>These terms are governed by the laws of the Federal Republic of Germany, without regard to conflict-of-law provisions. Mandatory consumer protection laws of your country of residence remain unaffected.</p>
+
+    <p class="effective-date">Effective date: 5 October 2026</p>
+  </section>
+
+  <!-- Impressum -->
+  <section class="legal-card" id="impressum">
+    <h2>📄 Impressum</h2>
+    <p style="margin-bottom: 10px;">Inhalte gemäß §5 DDG</p>
+    <p>
+      <strong>Martin Fabian</strong><br />
+      c/o IP-Management #9200<br />
+      Ludwig-Erhard-Straße 18<br />
+      20459 Hamburg
+    </p>
+    <h3>Kontakt</h3>
+    <p>
+      E-Mail: <a href="mailto:martin.fabian2005@gmail.com">martin.fabian2005@gmail.com</a><br />
+      Telefon: <a href="tel:+4917663469972">017663469972</a>
+    </p>
+  </section>
+
+  <!-- Contact -->
+  <section class="legal-card" id="contact">
+    <h2>✉️ Contact</h2>
+    <p>For privacy requests, account deletion, or any legal enquiries about CoachIn1, please contact:</p>
+    <p style="margin-top: 12px;">
+      <strong>Micro Macro Nutri Labs</strong><br />
+      <a href="mailto:info@micromacronutrilabs.com?subject=CoachIn1">info@micromacronutrilabs.com</a>
+    </p>
+  </section>
+</div>
+
+
+<footer>
+  <p style="margin-bottom:8px;">
+    <a href="#privacy-policy">Privacy Policy</a> &nbsp;·&nbsp;
+    <a href="#terms-of-use">Terms of Use</a> &nbsp;·&nbsp;
+    <a href="/coachin1/account-deletion.html">Delete account</a> &nbsp;·&nbsp;
+    <a href="mailto:info@micromacronutrilabs.com?subject=CoachIn1">Contact</a>
+  </p>
+  <p style="margin-bottom:8px;">Also by us: <a href="/">Micro Macro Tracker</a></p>
+  &copy; 2026 Micro Macro Nutri Labs
+</footer>
+
+</body>
+</html>

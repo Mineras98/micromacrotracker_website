@@ -1,0 +1,321 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Delete Account – CoachIn1</title>
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+      background: #0b1a16;
+      color: #e2e8f0;
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 24px;
+    }
+
+    .card {
+      background: #12261f;
+      border: 1px solid #24453a;
+      border-radius: 20px;
+      max-width: 520px;
+      width: 100%;
+      padding: 40px 36px;
+    }
+
+    .logo {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      margin-bottom: 32px;
+    }
+
+    .logo-icon {
+      width: 44px;
+      height: 44px;
+      background: linear-gradient(135deg, #0f4c3a, #2089dc);
+      border-radius: 12px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 22px;
+    }
+
+    .logo-text {
+      font-size: 18px;
+      font-weight: 700;
+      color: #f1f5f9;
+    }
+
+    h1 {
+      font-size: 22px;
+      font-weight: 700;
+      color: #f1f5f9;
+      margin-bottom: 10px;
+    }
+
+    .subtitle {
+      color: #94a3b8;
+      font-size: 14px;
+      line-height: 1.6;
+      margin-bottom: 28px;
+    }
+
+    .method {
+      background: #183229;
+      border: 1px solid #24453a;
+      border-radius: 14px;
+      padding: 20px;
+      margin-bottom: 16px;
+    }
+
+    .method-title {
+      font-weight: 600;
+      font-size: 15px;
+      color: #f1f5f9;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      margin-bottom: 8px;
+    }
+
+    .badge {
+      background: linear-gradient(135deg, #0f4c3a, #2089dc);
+      color: #fff;
+      font-size: 11px;
+      font-weight: 700;
+      padding: 2px 8px;
+      border-radius: 20px;
+      letter-spacing: 0.5px;
+    }
+
+    .method-body {
+      color: #94a3b8;
+      font-size: 13px;
+      line-height: 1.6;
+    }
+
+    .steps {
+      list-style: none;
+      counter-reset: steps;
+      margin-top: 10px;
+    }
+
+    .steps li {
+      counter-increment: steps;
+      display: flex;
+      gap: 10px;
+      margin-bottom: 6px;
+      font-size: 13px;
+      color: #94a3b8;
+    }
+
+    .steps li::before {
+      content: counter(steps);
+      background: #24453a;
+      color: #5fb0f0;
+      font-weight: 700;
+      font-size: 11px;
+      min-width: 20px;
+      height: 20px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-top: 1px;
+      flex-shrink: 0;
+    }
+
+    .divider {
+      text-align: center;
+      color: #475569;
+      font-size: 12px;
+      margin: 20px 0;
+      position: relative;
+    }
+
+    .divider::before, .divider::after {
+      content: '';
+      position: absolute;
+      top: 50%;
+      width: calc(50% - 24px);
+      height: 1px;
+      background: #24453a;
+    }
+    .divider::before { left: 0; }
+    .divider::after { right: 0; }
+
+    form { display: flex; flex-direction: column; gap: 14px; }
+
+    label {
+      font-size: 13px;
+      color: #94a3b8;
+      margin-bottom: 4px;
+      display: block;
+    }
+
+    input, textarea {
+      width: 100%;
+      background: #0b1a16;
+      border: 1px solid #24453a;
+      border-radius: 10px;
+      padding: 12px 14px;
+      color: #f1f5f9;
+      font-size: 14px;
+      font-family: inherit;
+      outline: none;
+      transition: border-color 0.2s;
+    }
+
+    input:focus, textarea:focus {
+      border-color: #2089dc;
+    }
+
+    textarea { resize: vertical; min-height: 80px; }
+
+    .checkbox-row {
+      display: flex;
+      align-items: flex-start;
+      gap: 10px;
+      font-size: 13px;
+      color: #94a3b8;
+      line-height: 1.5;
+    }
+
+    .checkbox-row input[type="checkbox"] {
+      width: 16px;
+      height: 16px;
+      margin-top: 2px;
+      flex-shrink: 0;
+      accent-color: #2089dc;
+    }
+
+    button[type="submit"] {
+      background: linear-gradient(135deg, #dc2626, #b91c1c);
+      color: #fff;
+      border: none;
+      border-radius: 12px;
+      padding: 14px;
+      font-size: 15px;
+      font-weight: 600;
+      cursor: pointer;
+      transition: opacity 0.2s;
+    }
+
+    button[type="submit"]:hover { opacity: 0.9; }
+    button[type="submit"]:disabled { opacity: 0.4; cursor: not-allowed; }
+
+    .success {
+      display: none;
+      background: #052e16;
+      border: 1px solid #166534;
+      border-radius: 12px;
+      padding: 16px;
+      color: #86efac;
+      font-size: 14px;
+      line-height: 1.5;
+      text-align: center;
+    }
+
+    .warning {
+      background: #2d1a0e;
+      border: 1px solid #92400e;
+      border-radius: 10px;
+      padding: 12px 14px;
+      color: #fcd34d;
+      font-size: 12px;
+      line-height: 1.5;
+    }
+  </style>
+</head>
+<body>
+  <div class="card">
+    <div class="logo">
+      <img src="/coachin1/icon.png" alt="" style="width:44px;height:44px;border-radius:12px;" />
+      <div class="logo-text">CoachIn1</div>
+    </div>
+
+    <h1>Delete your account</h1>
+    <p class="subtitle">
+      Submit a request below to delete your CoachIn1 account and all associated data.
+      All data is permanently removed within 30 days.
+    </p>
+
+    <div class="method">
+      <div class="method-title">
+        <span>What gets deleted</span>
+      </div>
+      <div class="method-body">
+        <ol class="steps">
+          <li><strong>Coaches:</strong> your account, your plan library, all plans you assigned, and your links to clients.</li>
+          <li><strong>Clients:</strong> your account, your profile, and all your workout and meal logs. Your coach will no longer see them.</li>
+        </ol>
+      </div>
+    </div>
+
+    <div class="divider">submit a request</div>
+
+    <!-- Web form -->
+    <form id="deleteForm">
+      <div>
+        <label for="email">Email address linked to your account</label>
+        <input type="email" id="email" name="email" placeholder="you@example.com" required />
+      </div>
+
+      <div>
+        <label for="reason">Reason for deletion (optional)</label>
+        <textarea id="reason" name="reason" placeholder="Let us know why you're leaving…"></textarea>
+      </div>
+
+      <div class="warning">
+        ⚠️ Deleting your account permanently removes your plans, workout and meal logs, and personal data. This cannot be undone.
+      </div>
+
+      <label class="checkbox-row">
+        <input type="checkbox" id="confirm" required />
+        <span>I understand this action is irreversible and want to delete my account and all associated data.</span>
+      </label>
+
+      <button type="submit" id="submitBtn" disabled>Request account deletion</button>
+    </form>
+
+    <div class="success" id="successMsg">
+      ✅ Your deletion request has been received. Your account and all associated data will be permanently deleted within 30 days. You will receive a confirmation email once complete.
+    </div>
+  </div>
+
+  <script>
+    const form = document.getElementById('deleteForm');
+    const confirmBox = document.getElementById('confirm');
+    const submitBtn = document.getElementById('submitBtn');
+    const successMsg = document.getElementById('successMsg');
+
+    confirmBox.addEventListener('change', () => {
+      submitBtn.disabled = !confirmBox.checked;
+    });
+
+    form.addEventListener('submit', async (e) => {
+      e.preventDefault();
+      submitBtn.disabled = true;
+      submitBtn.textContent = 'Submitting…';
+
+      const email = document.getElementById('email').value.trim();
+      const reason = document.getElementById('reason').value.trim();
+
+      // Send via mailto as fallback (replace with your backend/Firebase Function endpoint)
+      const subject = encodeURIComponent('CoachIn1 Account Deletion Request');
+      const body = encodeURIComponent(
+        `Account deletion request\n\nEmail: ${email}\nReason: ${reason || 'Not provided'}`
+      );
+      window.location.href = `mailto:info@micromacronutrilabs.com?subject=${subject}&body=${body}`;
+
+      form.style.display = 'none';
+      successMsg.style.display = 'block';
+    });
+  </script>
+</body>
+</html>
