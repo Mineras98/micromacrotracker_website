@@ -3,21 +3,23 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>CoachIn1 – Nutrition &amp; Training Coaching App</title>
-  <meta name="description" content="CoachIn1 lets fitness and nutrition coaches build meal and training plans, assign them to clients, and follow their clients' logged workouts and meals — all in one app." />
+  <title>CoachIn1 – Nutrition &amp; Training Coaching App for Coaches</title>
+  <meta name="description" content="CoachIn1 lets fitness and nutrition coaches build meal and training plans, assign them to clients, and see every workout their clients log. Early access on Android and iPhone — free for the first 20 coaches." />
+  <meta name="theme-color" content="#0b1a16" />
 
   <link rel="canonical" href="https://micromacronutrilabs.com/coachin1/" />
   <link rel="icon" href="/coachin1/icon.png" />
+  <link rel="preload" as="image" href="/coachin1/img/coach-client.webp" />
 
   <meta property="og:type" content="website" />
   <meta property="og:site_name" content="CoachIn1" />
   <meta property="og:title" content="CoachIn1 – Coach your clients' nutrition and training in one app" />
-  <meta property="og:description" content="Build meal and training plans, invite clients by email, and see what they actually ate and lifted. For coaches and their clients." />
+  <meta property="og:description" content="Build meal and training plans, invite clients by email, and see every set they log. Early access on Android and iPhone." />
   <meta property="og:url" content="https://micromacronutrilabs.com/coachin1/" />
   <meta property="og:image" content="https://micromacronutrilabs.com/coachin1/icon.png" />
   <meta name="twitter:card" content="summary" />
   <meta name="twitter:title" content="CoachIn1" />
-  <meta name="twitter:description" content="Nutrition and training coaching app for coaches and their clients." />
+  <meta name="twitter:description" content="Nutrition and training coaching app for coaches and their clients. Early access on Android and iPhone." />
   <meta name="twitter:image" content="https://micromacronutrilabs.com/coachin1/icon.png" />
 
   <script type="application/ld+json">
@@ -25,25 +27,72 @@
     "@context": "https://schema.org",
     "@type": "MobileApplication",
     "name": "CoachIn1",
-    "operatingSystem": "Android",
+    "operatingSystem": "Android, iOS",
     "applicationCategory": "HealthApplication",
     "url": "https://micromacronutrilabs.com/coachin1/",
     "image": "https://micromacronutrilabs.com/coachin1/icon.png",
-    "description": "CoachIn1 is a coaching app for nutrition and fitness coaches. Coaches build meal plans (foods with calories, protein, carbs and fat) and training plans (strength and cardio sessions), invite clients by email and assign plans to them. Clients follow their plans and log workouts set by set in kg or lb, so their coach sees what was actually trained. Coaches can leave notes for clients, which clients tick off when done.",
+    "screenshot": [
+      "https://micromacronutrilabs.com/coachin1/img/coach-client.webp",
+      "https://micromacronutrilabs.com/coachin1/img/meal-plans.webp",
+      "https://micromacronutrilabs.com/coachin1/img/training-plan.webp",
+      "https://micromacronutrilabs.com/coachin1/img/workout-log.webp"
+    ],
+    "description": "CoachIn1 is a coaching app for nutrition and fitness coaches, available in early access on Android and iPhone. Coaches build meal plans (foods with calories, protein, carbs and fat) and training plans (strength and cardio sessions), invite clients by email and assign plans to them. Clients follow their plans and log workouts set by set in kg or lb, so their coach sees what was actually trained. Coaches can leave notes for clients, which clients tick off when done. Nutrition and training are included in one app, and data is stored in the EU.",
     "featureList": [
       "Meal plan builder with macros",
       "Training plan builder (strength & cardio)",
       "Reusable plan library",
       "Client invites by email",
-      "Workout logging (sets, reps, weight, cardio)",
+      "Workout logging (sets, reps, weight in kg or lb, cardio)",
       "Coach notes for clients",
-      "Coach view of client logs"
+      "Coach view of client logs",
+      "Data stored in the EU"
     ],
+    "offers": {
+      "@type": "Offer",
+      "price": "0",
+      "priceCurrency": "EUR",
+      "description": "Free during early access for the first 20 coaches, then 50% off for life."
+    },
     "publisher": {
       "@type": "Organization",
       "name": "Micro Macro Nutri Labs",
       "url": "https://micromacronutrilabs.com/"
     }
+  }
+  </script>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "Is CoachIn1 available on iPhone?",
+        "acceptedAnswer": { "@type": "Answer", "text": "Yes. Early access is open on both Android and iPhone, for coaches and their clients." }
+      },
+      {
+        "@type": "Question",
+        "name": "What does CoachIn1 cost?",
+        "acceptedAnswer": { "@type": "Answer", "text": "CoachIn1 is free during early access for the first 20 coaches. Those coaches keep 50% off for life once paid plans start." }
+      },
+      {
+        "@type": "Question",
+        "name": "Is nutrition coaching a paid add-on?",
+        "acceptedAnswer": { "@type": "Answer", "text": "No. Meal plans with macros and training plans are both part of CoachIn1." }
+      },
+      {
+        "@type": "Question",
+        "name": "Where is CoachIn1 data stored?",
+        "acceptedAnswer": { "@type": "Answer", "text": "CoachIn1 data is stored with Supabase in the EU (Ireland), and the app is operated from Germany under the GDPR." }
+      },
+      {
+        "@type": "Question",
+        "name": "How do clients join CoachIn1?",
+        "acceptedAnswer": { "@type": "Answer", "text": "The coach adds a client by name and email. The client gets an invite, installs the app and sees the plans their coach assigned." }
+      }
+    ]
   }
   </script>
 
@@ -57,17 +106,19 @@
       --border:        #24453a;
       --primary:       #2089dc;
       --primary-light: #5fb0f0;
-      --primary-dark:  #1a6fb3;
       --brand:         #0f4c3a;
       --green:         #22c55e;
       --green-light:   #4ade80;
+      --lime:          #bef264;
+      --lime-dark:     #a3e635;
       --amber:         #fbbf24;
       --text:          #e2e8f0;
       --muted:         #94a3b8;
       --heading:       #f1f5f9;
+      --radius:        18px;
     }
 
-    html { scroll-behavior: smooth; }
+    html { scroll-behavior: smooth; scroll-padding-top: 72px; }
 
     body {
       background: var(--bg);
@@ -75,248 +126,365 @@
       font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
       font-size: 16px;
       line-height: 1.7;
+      overflow-x: hidden;
     }
 
+    img { max-width: 100%; }
     a { color: var(--primary-light); text-decoration: none; }
     a:hover { text-decoration: underline; }
-    ::selection { background: rgba(32,137,220,0.35); color: var(--heading); }
+    ::selection { background: rgba(190,242,100,0.3); color: var(--heading); }
+
+    .container { max-width: 1120px; margin: 0 auto; padding: 0 24px; }
+    @media (max-width: 600px) { .container { padding: 0 16px; } }
+
+    /* ── Buttons ─────────────────────────────────────── */
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      padding: 13px 22px;
+      border-radius: 12px;
+      font-weight: 700;
+      font-size: 0.95rem;
+      line-height: 1.2;
+      transition: transform .15s, background .15s, border-color .15s;
+    }
+    .btn:hover { text-decoration: none; transform: translateY(-1px); }
+    .btn-primary { background: var(--lime); color: #0b1a16; box-shadow: 0 10px 30px rgba(190,242,100,0.18); }
+    .btn-primary:hover { background: var(--lime-dark); }
+    .btn-ghost { color: var(--heading); border: 1px solid var(--border); background: rgba(255,255,255,0.03); }
+    .btn-ghost:hover { border-color: #3a6656; }
+    .btn-sm { padding: 8px 14px; font-size: 0.85rem; border-radius: 10px; }
 
     /* ── Nav ─────────────────────────────────────────── */
     nav {
       position: sticky;
       top: 0;
       z-index: 100;
-      background: rgba(11, 26, 22, 0.92);
+      background: rgba(11, 26, 22, 0.85);
       backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
       border-bottom: 1px solid var(--border);
-      padding: 0 24px;
-      height: 60px;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
     }
+    nav .container { height: 60px; display: flex; align-items: center; justify-content: space-between; gap: 16px; }
 
-    .nav-brand {
-      display: flex;
-      align-items: center;
-      gap: 10px;
-      font-weight: 700;
-      color: var(--heading);
-      font-size: 1rem;
-    }
+    .nav-brand { display: flex; align-items: center; gap: 10px; font-weight: 800; color: var(--heading); font-size: 1.02rem; }
+    .nav-brand img { width: 28px; height: 28px; border-radius: 7px; }
     .nav-brand:hover { text-decoration: none; }
 
-    .nav-links { display: flex; align-items: center; gap: 28px; list-style: none; }
-    .nav-links a { color: var(--muted); font-size: 0.88rem; transition: color .2s; }
-    .nav-links a:hover { color: var(--text); text-decoration: none; }
+    .nav-links { display: flex; align-items: center; gap: 26px; list-style: none; }
+    .nav-links a:not(.btn) { color: var(--muted); font-size: 0.88rem; transition: color .2s; }
+    .nav-links a:not(.btn):hover { color: var(--text); text-decoration: none; }
 
-    @media (max-width: 600px) {
-      .nav-links .hide-mobile { display: none; }
+    @media (max-width: 720px) { .nav-links .hide-mobile { display: none; } }
+
+    /* ── Phone mockup ────────────────────────────────── */
+    .phone {
+      width: 280px;
+      padding: 9px;
+      border-radius: 44px;
+      background: #050b09;
+      border: 1px solid #2c463c;
+      box-shadow: 0 30px 70px rgba(0,0,0,0.55), inset 0 0 0 1px rgba(255,255,255,0.04);
+    }
+    .phone img {
+      display: block;
+      width: 100%;
+      height: auto;
+      aspect-ratio: 600 / 1169;
+      border-radius: 35px;
+      background: #f3f4f6;
     }
 
     /* ── Hero ────────────────────────────────────────── */
     .hero {
-      background: linear-gradient(160deg, #0f4c3a 0%, #0b1a16 60%, #0b1a24 100%);
-      padding: 80px 24px 70px;
-      text-align: center;
       position: relative;
       overflow: hidden;
+      background: linear-gradient(160deg, #0f4c3a 0%, #0b1a16 58%, #0b1a24 100%);
+      border-bottom: 1px solid var(--border);
     }
-
     .hero::before {
       content: '';
       position: absolute;
       inset: 0;
-      background: radial-gradient(ellipse 70% 50% at 50% 0%, rgba(34,197,94,0.16) 0%, transparent 70%);
+      background:
+        radial-gradient(ellipse 60% 50% at 20% 0%, rgba(34,197,94,0.18) 0%, transparent 70%),
+        radial-gradient(ellipse 45% 45% at 85% 60%, rgba(190,242,100,0.10) 0%, transparent 70%);
       pointer-events: none;
     }
-
-    .hero > * { position: relative; }
-
-    .hero-icon {
-      width: 88px;
-      height: 88px;
-      border-radius: 22px;
-      margin-bottom: 24px;
-      box-shadow: 0 18px 40px rgba(0,0,0,0.45);
+    .hero .container {
+      position: relative;
+      display: grid;
+      grid-template-columns: 1.1fr 0.9fr;
+      align-items: center;
+      gap: 40px;
+      padding-top: 72px;
+      padding-bottom: 72px;
     }
 
-    .hero-badge {
+    .badge {
       display: inline-flex;
       align-items: center;
       gap: 8px;
-      background: rgba(34,197,94,0.12);
-      border: 1px solid rgba(34,197,94,0.35);
+      background: rgba(190,242,100,0.10);
+      border: 1px solid rgba(190,242,100,0.35);
       border-radius: 100px;
       padding: 5px 14px;
       font-size: 0.82rem;
-      color: var(--green-light);
-      font-weight: 600;
-      margin-bottom: 24px;
+      color: var(--lime);
+      font-weight: 700;
+      margin-bottom: 22px;
     }
+    .badge .dot { width: 7px; height: 7px; border-radius: 50%; background: var(--lime); box-shadow: 0 0 0 4px rgba(190,242,100,0.18); }
 
     .hero h1 {
-      font-size: clamp(2rem, 5vw, 3.2rem);
+      font-size: clamp(2.2rem, 5vw, 3.6rem);
       font-weight: 800;
       color: var(--heading);
-      line-height: 1.15;
-      letter-spacing: -0.03em;
-      max-width: 700px;
-      margin: 0 auto 20px;
+      line-height: 1.08;
+      letter-spacing: -0.035em;
+      margin-bottom: 20px;
     }
-
     .hero h1 em {
       font-style: normal;
-      background: linear-gradient(90deg, var(--green-light), var(--primary-light));
+      background: linear-gradient(90deg, var(--lime), var(--green-light));
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
       background-clip: text;
     }
+    .hero .lead { font-size: 1.12rem; color: #b6c2d1; max-width: 520px; margin-bottom: 30px; }
 
-    .hero p {
-      font-size: 1.1rem;
-      color: var(--muted);
-      max-width: 560px;
-      margin: 0 auto;
+    .cta-row { display: flex; flex-wrap: wrap; gap: 12px; margin-bottom: 28px; }
+
+    .perks { display: flex; flex-wrap: wrap; gap: 10px 22px; list-style: none; font-size: 0.88rem; color: var(--text); }
+    .perks li { display: flex; align-items: center; gap: 8px; }
+    .perks svg { flex-shrink: 0; color: var(--lime); }
+
+    .hero-visual { position: relative; height: 560px; }
+    .hero-visual .phone { position: absolute; }
+    .hero-visual .phone.back { width: 240px; right: 2%; top: 60px; transform: rotate(7deg); opacity: 0.9; }
+    .hero-visual .phone.front { width: 270px; left: 4%; top: 0; transform: rotate(-3deg); }
+
+    @media (max-width: 900px) {
+      .hero .container { grid-template-columns: 1fr; padding-top: 56px; padding-bottom: 0; text-align: center; }
+      .hero .lead { margin-left: auto; margin-right: auto; }
+      .cta-row, .perks { justify-content: center; }
+      .hero-visual { height: 400px; max-width: 420px; width: 100%; margin: 0 auto; overflow: hidden; }
+      .hero-visual .phone.front { width: 230px; left: 6%; top: 10px; }
+      .hero-visual .phone.back  { width: 200px; right: 4%; top: 60px; }
+    }
+    @media (max-width: 420px) {
+      .hero-visual { height: 340px; }
+      .hero-visual .phone.front { width: 190px; left: 2%; }
+      .hero-visual .phone.back  { width: 165px; right: 0; }
     }
 
-    /* ── Sections ────────────────────────────────────── */
+    /* ── Section heads ───────────────────────────────── */
+    section.block { padding: 88px 0; }
+    @media (max-width: 600px) { section.block { padding: 64px 0; } }
+
     .section-label {
       text-align: center;
       font-size: 0.78rem;
       font-weight: 700;
-      letter-spacing: 0.1em;
+      letter-spacing: 0.12em;
       text-transform: uppercase;
       color: var(--green-light);
       margin-bottom: 12px;
     }
-
     .section-title {
       text-align: center;
-      font-size: clamp(1.5rem, 3vw, 2rem);
+      font-size: clamp(1.7rem, 3.4vw, 2.4rem);
       font-weight: 800;
       color: var(--heading);
-      letter-spacing: -0.02em;
-      margin-bottom: 12px;
+      letter-spacing: -0.025em;
+      line-height: 1.2;
+      margin-bottom: 14px;
     }
+    .section-sub { text-align: center; color: var(--muted); font-size: 1rem; max-width: 560px; margin: 0 auto 52px; }
 
-    .section-sub {
-      text-align: center;
-      color: var(--muted);
-      font-size: 0.95rem;
-      max-width: 540px;
-      margin: 0 auto 48px;
+    /* ── Pain points ─────────────────────────────────── */
+    .pains { display: grid; grid-template-columns: repeat(3, 1fr); gap: 18px; }
+    @media (max-width: 800px) { .pains { grid-template-columns: 1fr; } }
+    .pain {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 26px;
     }
+    .pain .before { font-size: 0.78rem; font-weight: 700; letter-spacing: .06em; text-transform: uppercase; color: #f87171; margin-bottom: 6px; }
+    .pain h3 { color: var(--heading); font-size: 1.05rem; margin-bottom: 10px; line-height: 1.35; }
+    .pain p { color: var(--muted); font-size: 0.9rem; }
+    .pain .after { margin-top: 14px; padding-top: 14px; border-top: 1px dashed var(--border); color: var(--text); font-size: 0.9rem; }
+    .pain .after strong { color: var(--lime); }
 
-    .features-section {
-      padding: 72px 24px;
-      max-width: 1040px;
-      margin: 0 auto;
-    }
-
-    .roles {
+    /* ── Showcase ────────────────────────────────────── */
+    .showcase { background: linear-gradient(180deg, transparent 0%, rgba(15,76,58,0.25) 50%, transparent 100%); }
+    .feature-row {
       display: grid;
       grid-template-columns: 1fr 1fr;
-      gap: 20px;
+      align-items: center;
+      gap: 56px;
+      max-width: 960px;
+      margin: 0 auto;
+    }
+    .feature-row + .feature-row { margin-top: 96px; }
+    .feature-row.flip .feature-media { order: 2; }
+    .feature-media { display: flex; justify-content: center; position: relative; }
+    .feature-media::before {
+      content: '';
+      position: absolute;
+      width: 340px;
+      height: 340px;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      background: radial-gradient(circle, rgba(34,197,94,0.20) 0%, transparent 65%);
+      pointer-events: none;
+    }
+    .feature-media .phone { position: relative; width: 270px; }
+    .feature-copy .kicker { font-size: 0.8rem; font-weight: 700; letter-spacing: .1em; text-transform: uppercase; color: var(--green-light); margin-bottom: 10px; }
+    .feature-copy h3 { font-size: clamp(1.5rem, 2.8vw, 2rem); line-height: 1.2; letter-spacing: -0.02em; color: var(--heading); margin-bottom: 14px; }
+    .feature-copy p { color: #b6c2d1; margin-bottom: 18px; }
+    .ticks { list-style: none; display: flex; flex-direction: column; gap: 8px; }
+    .ticks li { display: flex; gap: 10px; font-size: 0.93rem; color: var(--text); }
+    .ticks svg { flex-shrink: 0; margin-top: 5px; color: var(--lime); }
+
+    @media (max-width: 800px) {
+      .feature-row { grid-template-columns: 1fr; gap: 32px; }
+      .feature-row.flip .feature-media { order: 0; }
+      .feature-row + .feature-row { margin-top: 72px; }
+      .feature-media .phone { width: 240px; }
     }
 
-    @media (max-width: 720px) {
-      .roles { grid-template-columns: 1fr; }
-    }
+    /* ── Roles ───────────────────────────────────────── */
+    .roles { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
+    @media (max-width: 760px) { .roles { grid-template-columns: 1fr; } }
 
     .role-card {
       background: var(--surface);
       border: 1px solid var(--border);
-      border-radius: 16px;
-      padding: 28px;
+      border-radius: var(--radius);
+      padding: 30px;
     }
-
-    .role-card h3 {
-      font-size: 1.1rem;
-      font-weight: 700;
-      color: var(--heading);
-      margin-bottom: 16px;
-      display: flex;
+    .role-card h3 { font-size: 1.15rem; font-weight: 800; color: var(--heading); margin-bottom: 18px; display: flex; align-items: center; gap: 10px; }
+    .role-list { list-style: none; display: flex; flex-direction: column; gap: 16px; }
+    .role-list li { display: flex; gap: 14px; }
+    .role-list .ic {
+      flex-shrink: 0;
+      width: 38px;
+      height: 38px;
+      border-radius: 10px;
+      background: var(--surface2);
+      border: 1px solid var(--border);
+      display: inline-flex;
       align-items: center;
-      gap: 10px;
+      justify-content: center;
+      font-size: 1.1rem;
     }
-
-    .role-list { list-style: none; display: flex; flex-direction: column; gap: 14px; }
-
-    .role-list li { display: flex; gap: 12px; }
-
-    .role-list .ic { font-size: 1.3rem; flex-shrink: 0; line-height: 1.4; }
-
-    .role-list strong { display: block; color: var(--heading); font-size: 0.92rem; }
-
-    .role-list span.d { color: var(--muted); font-size: 0.85rem; line-height: 1.6; }
+    .role-list strong { display: block; color: var(--heading); font-size: 0.95rem; }
+    .role-list span.d { color: var(--muted); font-size: 0.87rem; line-height: 1.6; }
 
     /* ── How it works ────────────────────────────────── */
     .steps-section {
       background: linear-gradient(135deg, #0f4c3a 0%, #0b1a16 100%);
       border-top: 1px solid var(--border);
       border-bottom: 1px solid var(--border);
-      padding: 72px 24px;
     }
-
-    .steps {
-      max-width: 900px;
-      margin: 0 auto;
-      display: grid;
-      grid-template-columns: repeat(4, 1fr);
-      gap: 16px;
-      counter-reset: step;
-    }
-
-    @media (max-width: 800px) {
-      .steps { grid-template-columns: 1fr 1fr; }
-    }
-
-    @media (max-width: 480px) {
-      .steps { grid-template-columns: 1fr; }
-    }
-
+    .steps { max-width: 960px; margin: 0 auto; display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px; counter-reset: step; }
+    @media (max-width: 800px) { .steps { grid-template-columns: 1fr 1fr; } }
+    @media (max-width: 480px) { .steps { grid-template-columns: 1fr; } }
     .step {
-      background: var(--surface);
+      background: rgba(18,38,31,0.85);
       border: 1px solid var(--border);
-      border-radius: 14px;
-      padding: 20px;
+      border-radius: 16px;
+      padding: 22px;
       counter-increment: step;
     }
-
     .step::before {
       content: counter(step);
       display: inline-flex;
       align-items: center;
       justify-content: center;
-      width: 28px;
-      height: 28px;
+      width: 30px;
+      height: 30px;
       border-radius: 50%;
-      background: var(--primary);
-      color: #fff;
-      font-weight: 700;
+      background: var(--lime);
+      color: #0b1a16;
+      font-weight: 800;
       font-size: 0.85rem;
       margin-bottom: 12px;
     }
+    .step h4 { color: var(--heading); font-size: 1rem; margin-bottom: 6px; }
+    .step p  { color: var(--muted); font-size: 0.86rem; line-height: 1.6; }
 
-    .step h4 { color: var(--heading); font-size: 0.95rem; margin-bottom: 6px; }
-    .step p  { color: var(--muted); font-size: 0.83rem; line-height: 1.6; }
+    /* ── Early access offer ──────────────────────────── */
+    .offer {
+      position: relative;
+      overflow: hidden;
+      max-width: 920px;
+      margin: 0 auto;
+      border-radius: 26px;
+      border: 1px solid rgba(190,242,100,0.35);
+      background:
+        radial-gradient(ellipse 70% 80% at 100% 0%, rgba(190,242,100,0.14) 0%, transparent 60%),
+        linear-gradient(150deg, #134e3c 0%, #0f2a22 60%, #0b1a16 100%);
+      padding: 48px;
+      display: grid;
+      grid-template-columns: 1.2fr 1fr;
+      gap: 40px;
+      align-items: center;
+    }
+    @media (max-width: 800px) { .offer { grid-template-columns: 1fr; padding: 32px 22px; gap: 28px; } }
+    .offer .badge { margin-bottom: 16px; }
+    .offer h2 { font-size: clamp(1.7rem, 3.4vw, 2.4rem); line-height: 1.15; letter-spacing: -0.025em; color: var(--heading); margin-bottom: 14px; }
+    .offer p { color: #b6c2d1; margin-bottom: 24px; }
+    .offer .fine { font-size: 0.8rem; color: var(--muted); margin: 14px 0 0; }
+
+    .offer-list { list-style: none; display: flex; flex-direction: column; gap: 12px; }
+    .offer-list li {
+      display: flex;
+      gap: 14px;
+      align-items: flex-start;
+      background: rgba(11,26,22,0.55);
+      border: 1px solid var(--border);
+      border-radius: 14px;
+      padding: 14px 16px;
+    }
+    .offer-list .big { flex-shrink: 0; min-width: 58px; font-size: 1.25rem; font-weight: 800; color: var(--lime); line-height: 1.3; }
+    .offer-list strong { display: block; color: var(--heading); font-size: 0.95rem; }
+    .offer-list span { color: var(--muted); font-size: 0.85rem; }
+
+    /* ── FAQ ─────────────────────────────────────────── */
+    .faq { max-width: 760px; margin: 0 auto; display: flex; flex-direction: column; gap: 12px; }
+    .faq details {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 14px;
+      padding: 0 22px;
+    }
+    .faq details[open] { border-color: #34604f; }
+    .faq summary {
+      list-style: none;
+      cursor: pointer;
+      padding: 18px 0;
+      font-weight: 700;
+      color: var(--heading);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 16px;
+    }
+    .faq summary::-webkit-details-marker { display: none; }
+    .faq summary::after { content: '+'; font-size: 1.4rem; font-weight: 400; color: var(--lime); transition: transform .2s; }
+    .faq details[open] summary::after { transform: rotate(45deg); }
+    .faq details p { color: var(--muted); font-size: 0.93rem; padding-bottom: 18px; }
 
     /* ── Legal sections ──────────────────────────────── */
-    .legal-wrapper {
-      max-width: 780px;
-      margin: 0 auto;
-      padding: 60px 24px 80px;
-    }
-
-    .legal-title {
-      text-align: center;
-      font-size: 1.4rem;
-      font-weight: 800;
-      color: var(--heading);
-      margin-bottom: 32px;
-      letter-spacing: -0.02em;
-    }
+    .legal-wrapper { max-width: 780px; margin: 0 auto; padding: 60px 24px 80px; }
+    @media (max-width: 600px) { .legal-wrapper { padding: 48px 16px 64px; } }
+    .legal-title { text-align: center; font-size: 1.4rem; font-weight: 800; color: var(--heading); margin-bottom: 32px; letter-spacing: -0.02em; }
 
     section.legal-card {
       background: var(--surface);
@@ -325,31 +493,11 @@
       padding: 32px 36px;
       margin-bottom: 28px;
     }
-
-    section.legal-card h2 {
-      font-size: 1.1rem;
-      font-weight: 700;
-      color: var(--heading);
-      margin-bottom: 18px;
-      padding-bottom: 12px;
-      border-bottom: 1px solid var(--border);
-    }
-
-    section.legal-card h3 {
-      font-size: 0.92rem;
-      font-weight: 600;
-      color: var(--green-light);
-      margin: 20px 0 6px;
-    }
-
+    section.legal-card h2 { font-size: 1.1rem; font-weight: 700; color: var(--heading); margin-bottom: 18px; padding-bottom: 12px; border-bottom: 1px solid var(--border); }
+    section.legal-card h3 { font-size: 0.92rem; font-weight: 600; color: var(--green-light); margin: 20px 0 6px; }
     section.legal-card p,
-    section.legal-card li {
-      font-size: 0.875rem;
-      color: var(--muted);
-    }
-
+    section.legal-card li { font-size: 0.875rem; color: var(--muted); }
     section.legal-card strong { color: var(--text); }
-
     section.legal-card ul { padding-left: 20px; margin-top: 6px; }
     section.legal-card li { margin-bottom: 4px; }
 
@@ -365,96 +513,270 @@
       color: var(--amber);
       line-height: 1.6;
     }
-
-    @media (max-width: 600px) {
-      section.legal-card { padding: 22px 18px; }
-    }
+    @media (max-width: 600px) { section.legal-card { padding: 22px 18px; } }
 
     /* ── Footer ──────────────────────────────────────── */
-    footer {
-      text-align: center;
-      padding: 28px 24px;
-      border-top: 1px solid var(--border);
-      font-size: 0.8rem;
-      color: var(--muted);
-    }
-
+    footer { text-align: center; padding: 28px 24px; border-top: 1px solid var(--border); font-size: 0.8rem; color: var(--muted); }
     footer a { color: var(--muted); }
     footer a:hover { color: var(--text); }
+
+    @media (prefers-reduced-motion: reduce) {
+      html { scroll-behavior: auto; }
+      .btn, .faq summary::after { transition: none; }
+      .btn:hover { transform: none; }
+    }
   </style>
 </head>
 <body>
 
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <symbol id="tick" viewBox="0 0 16 16"><path d="M3 8.5l3.2 3L13 4.5" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+</svg>
+
 <nav>
-  <a href="#" class="nav-brand">
-    <img src="/coachin1/icon.png" alt="" style="width:28px;height:28px;border-radius:7px;"> CoachIn1
-  </a>
-  <ul class="nav-links">
-    <li class="hide-mobile"><a href="#features">Features</a></li>
-    <li class="hide-mobile"><a href="#how-it-works">How it works</a></li>
-    <li><a href="#legal">Legal</a></li>
-  </ul>
+  <div class="container">
+    <a href="#" class="nav-brand"><img src="/coachin1/icon.png" alt="" /> CoachIn1</a>
+    <ul class="nav-links">
+      <li class="hide-mobile"><a href="#features">Features</a></li>
+      <li class="hide-mobile"><a href="#how-it-works">How it works</a></li>
+      <li class="hide-mobile"><a href="#faq">FAQ</a></li>
+      <li><a href="#early-access" class="btn btn-primary btn-sm">Get early access</a></li>
+    </ul>
+  </div>
 </nav>
 
 
 <!-- ══════════════════════════════════════════════════════
      HERO
 ══════════════════════════════════════════════════════ -->
-<section class="hero">
-  <img src="/coachin1/icon.png" alt="CoachIn1 app icon" class="hero-icon" />
-  <div><span class="hero-badge">📱 Early access on Android</span></div>
-  <h1>Coach nutrition <em>and</em> training — in one app</h1>
-  <p>CoachIn1 lets coaches build meal and training plans, hand them to clients, and see what was actually eaten and lifted. No spreadsheets, no chat threads full of screenshots.</p>
+<header class="hero">
+  <div class="container">
+    <div class="hero-copy">
+      <span class="badge"><span class="dot"></span> Early access on Android &amp; iPhone</span>
+      <h1>Coach nutrition <em>and</em> training in one app</h1>
+      <p class="lead">Build meal and training plans, hand them to your clients, and see every set they actually logged. No spreadsheets, no PDFs, no chat threads full of screenshots.</p>
+      <div class="cta-row">
+        <a href="#early-access" class="btn btn-primary">Claim one of 20 early-access spots</a>
+        <a href="#features" class="btn btn-ghost">See the app</a>
+      </div>
+      <ul class="perks">
+        <li><svg width="16" height="16"><use href="#tick"/></svg> Free during early access</li>
+        <li><svg width="16" height="16"><use href="#tick"/></svg> 50% off for life</li>
+        <li><svg width="16" height="16"><use href="#tick"/></svg> Data stored in the EU</li>
+      </ul>
+    </div>
+    <div class="hero-visual" aria-hidden="true">
+      <div class="phone back"><img src="/coachin1/img/clients.webp" alt="" width="600" height="1169" /></div>
+      <div class="phone front"><img src="/coachin1/img/coach-client.webp" alt="" width="600" height="1169" /></div>
+    </div>
+  </div>
+</header>
+
+
+<!-- ══════════════════════════════════════════════════════
+     PROBLEM → SOLUTION
+══════════════════════════════════════════════════════ -->
+<section class="block">
+  <div class="container">
+    <div class="section-label">Why CoachIn1</div>
+    <h2 class="section-title">Your coaching, out of the group chat</h2>
+    <p class="section-sub">Most coaches juggle a spreadsheet, a PDF and WhatsApp. CoachIn1 puts plan, log and feedback in one place.</p>
+    <div class="pains">
+      <div class="pain">
+        <div class="before">Before</div>
+        <h3>Plans live in PDFs and spreadsheets</h3>
+        <p>Every change means a new file, and clients open the old one.</p>
+        <div class="after"><strong>Now:</strong> edit the plan once, and your client's app updates.</div>
+      </div>
+      <div class="pain">
+        <div class="before">Before</div>
+        <h3>Feedback gets lost in the chat</h3>
+        <p>What you said on Monday's call is 200 messages up by Friday.</p>
+        <div class="after"><strong>Now:</strong> notes sit on top of the client's plan until they tick them off.</div>
+      </div>
+      <div class="pain">
+        <div class="before">Before</div>
+        <h3>You don't know what was lifted</h3>
+        <p>"Training went well" doesn't tell you the weights, reps or sets.</p>
+        <div class="after"><strong>Now:</strong> every set your client logs shows up in their profile.</div>
+      </div>
+    </div>
+  </div>
 </section>
 
 
 <!-- ══════════════════════════════════════════════════════
-     FEATURES
+     FEATURE SHOWCASE
 ══════════════════════════════════════════════════════ -->
-<div class="features-section" id="features">
-  <div class="section-label">Built for both sides</div>
-  <h2 class="section-title">One app for coach and client</h2>
-  <p class="section-sub">Coaches plan. Clients follow and log. Everyone sees the same thing.</p>
+<section class="block showcase" id="features">
+  <div class="container">
+    <div class="section-label">Features</div>
+    <h2 class="section-title">Everything a coach needs, nothing they don't</h2>
+    <p class="section-sub">Nutrition and training in the same app, with no paid add-on for meal plans.</p>
 
-  <div class="roles">
-    <div class="role-card">
-      <h3>🧑‍🏫 For coaches</h3>
-      <ul class="role-list">
-        <li><span class="ic">🍽️</span><div><strong>Meal plan builder</strong><span class="d">Group foods into meals with amounts, calories, protein, carbs and fat. Daily totals update as you build.</span></div></li>
-        <li><span class="ic">🏋️</span><div><strong>Training plan builder</strong><span class="d">Strength exercises with sets and rep ranges, cardio with duration and intensity, organised into sessions.</span></div></li>
-        <li><span class="ic">📚</span><div><strong>Plan library</strong><span class="d">Save plans as templates and reuse them across clients.</span></div></li>
-        <li><span class="ic">✉️</span><div><strong>Client invites</strong><span class="d">Add a client by name and email — they get an invite and join your roster.</span></div></li>
-        <li><span class="ic">📝</span><div><strong>Notes for clients</strong><span class="d">Leave notes after a call. Your client sees them first and ticks them off; you see what's done.</span></div></li>
-        <li><span class="ic">🔎</span><div><strong>Client overview</strong><span class="d">See every workout each client logged, set by set.</span></div></li>
-      </ul>
+    <div class="feature-row">
+      <div class="feature-media"><div class="phone"><img src="/coachin1/img/meal-plans.webp" alt="CoachIn1 meal plan list with calories, protein, carbs and fat per plan" width="600" height="1169" loading="lazy" /></div></div>
+      <div class="feature-copy">
+        <div class="kicker">Meal plans</div>
+        <h3>Meal plans with macros, built in minutes</h3>
+        <p>Group foods into meals with amounts. Calories, protein, carbs and fat add up as you build.</p>
+        <ul class="ticks">
+          <li><svg width="14" height="14"><use href="#tick"/></svg> Daily totals update while you edit</li>
+          <li><svg width="14" height="14"><use href="#tick"/></svg> Save plans to your library and reuse them</li>
+        </ul>
+      </div>
     </div>
 
-    <div class="role-card">
-      <h3>🙋 For clients</h3>
-      <ul class="role-list">
-        <li><span class="ic">📋</span><div><strong>Your plans, always with you</strong><span class="d">The meal and training plan your coach assigned, on your phone.</span></div></li>
-        <li><span class="ic">✅</span><div><strong>Workout logging</strong><span class="d">Log each set's reps and weight in kg or lb, plus cardio sessions, straight from your plan.</span></div></li>
-        <li><span class="ic">📝</span><div><strong>Notes from your coach</strong><span class="d">What came up in your call, at the top of your plan. Tick each one off when it's done.</span></div></li>
-        <li><span class="ic">🔐</span><div><strong>Invite-only</strong><span class="d">Client accounts are created by your coach's invite — no public profiles.</span></div></li>
-      </ul>
+    <div class="feature-row flip">
+      <div class="feature-media"><div class="phone"><img src="/coachin1/img/training-plan.webp" alt="CoachIn1 training plan with push, pull and legs sessions, sets and cardio" width="600" height="1169" loading="lazy" /></div></div>
+      <div class="feature-copy">
+        <div class="kicker">Training plans</div>
+        <h3>Training plans your way</h3>
+        <p>Organise strength work and cardio into sessions, with sets, rep ranges, duration and intensity.</p>
+        <ul class="ticks">
+          <li><svg width="14" height="14"><use href="#tick"/></svg> Push/pull/legs, upper/lower, or your own split</li>
+          <li><svg width="14" height="14"><use href="#tick"/></svg> Plan totals for sessions, sets and cardio minutes</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="feature-row">
+      <div class="feature-media"><div class="phone"><img src="/coachin1/img/client-plan.webp" alt="Client view in CoachIn1 showing notes from the coach above the training plan" width="600" height="1169" loading="lazy" /></div></div>
+      <div class="feature-copy">
+        <div class="kicker">Coach notes</div>
+        <h3>Your call notes, right where clients look</h3>
+        <p>Leave notes after a call. They're the first thing your client sees, above their plan.</p>
+        <ul class="ticks">
+          <li><svg width="14" height="14"><use href="#tick"/></svg> Clients tick notes off when they're done</li>
+          <li><svg width="14" height="14"><use href="#tick"/></svg> You see what's done, and when</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="feature-row flip">
+      <div class="feature-media"><div class="phone"><img src="/coachin1/img/workout-log.webp" alt="Client logging squats set by set in kg with last session's numbers shown" width="600" height="1169" loading="lazy" /></div></div>
+      <div class="feature-copy">
+        <div class="kicker">Workout logging</div>
+        <h3>Clients log every set</h3>
+        <p>Reps and weight for each set, straight from the plan, with last session's numbers right there.</p>
+        <ul class="ticks">
+          <li><svg width="14" height="14"><use href="#tick"/></svg> Kilograms or pounds, chosen by the client</li>
+          <li><svg width="14" height="14"><use href="#tick"/></svg> You see every logged workout in their profile</li>
+        </ul>
+      </div>
     </div>
   </div>
-</div>
+</section>
+
+
+<!-- ══════════════════════════════════════════════════════
+     ROLES
+══════════════════════════════════════════════════════ -->
+<section class="block" style="padding-top:24px;">
+  <div class="container">
+    <div class="section-label">Built for both sides</div>
+    <h2 class="section-title">One app for coach and client</h2>
+    <p class="section-sub">Coaches plan. Clients follow and log. Everyone sees the same thing.</p>
+
+    <div class="roles">
+      <div class="role-card">
+        <h3>🧑‍🏫 For coaches</h3>
+        <ul class="role-list">
+          <li><span class="ic">🍽️</span><div><strong>Meal plan builder</strong><span class="d">Group foods into meals with amounts, calories, protein, carbs and fat. Daily totals update as you build.</span></div></li>
+          <li><span class="ic">🏋️</span><div><strong>Training plan builder</strong><span class="d">Strength exercises with sets and rep ranges, cardio with duration and intensity, organised into sessions.</span></div></li>
+          <li><span class="ic">📚</span><div><strong>Plan library</strong><span class="d">Save plans as templates and reuse them across clients.</span></div></li>
+          <li><span class="ic">✉️</span><div><strong>Client invites</strong><span class="d">Add a client by name and email — they get an invite and join your roster.</span></div></li>
+          <li><span class="ic">📝</span><div><strong>Notes for clients</strong><span class="d">Leave notes after a call. Your client sees them first and ticks them off; you see what's done.</span></div></li>
+          <li><span class="ic">🔎</span><div><strong>Client overview</strong><span class="d">See every workout each client logged, set by set.</span></div></li>
+        </ul>
+      </div>
+
+      <div class="role-card">
+        <h3>🙋 For clients</h3>
+        <ul class="role-list">
+          <li><span class="ic">📋</span><div><strong>Your plans, always with you</strong><span class="d">The meal and training plan your coach assigned, on your phone.</span></div></li>
+          <li><span class="ic">✅</span><div><strong>Workout logging</strong><span class="d">Log each set's reps and weight in kg or lb, plus cardio sessions, straight from your plan.</span></div></li>
+          <li><span class="ic">📝</span><div><strong>Notes from your coach</strong><span class="d">What came up in your call, at the top of your plan. Tick each one off when it's done.</span></div></li>
+          <li><span class="ic">🔐</span><div><strong>Invite-only</strong><span class="d">Client accounts are created by your coach's invite — no public profiles.</span></div></li>
+          <li><span class="ic">📱</span><div><strong>Android and iPhone</strong><span class="d">Your clients can use either phone, and you see the same data.</span></div></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
 
 
 <!-- ══════════════════════════════════════════════════════
      HOW IT WORKS
 ══════════════════════════════════════════════════════ -->
-<div class="steps-section" id="how-it-works">
-  <div class="section-label">How it works</div>
-  <h2 class="section-title" style="margin-bottom:40px;">From plan to progress in four steps</h2>
-  <div class="steps">
-    <div class="step"><h4>Coach signs up</h4><p>Create a coach account with your email.</p></div>
-    <div class="step"><h4>Invite clients</h4><p>Enter a client's name and email. They receive an invite to join.</p></div>
-    <div class="step"><h4>Assign plans</h4><p>Build or reuse meal and training plans and assign them to each client.</p></div>
-    <div class="step"><h4>Client logs</h4><p>Clients log their workouts; you see them in their profile.</p></div>
+<section class="block steps-section" id="how-it-works">
+  <div class="container">
+    <div class="section-label">How it works</div>
+    <h2 class="section-title" style="margin-bottom:44px;">From plan to progress in four steps</h2>
+    <div class="steps">
+      <div class="step"><h4>Coach signs up</h4><p>Create a coach account with your email.</p></div>
+      <div class="step"><h4>Invite clients</h4><p>Enter a client's name and email. They receive an invite to join.</p></div>
+      <div class="step"><h4>Assign plans</h4><p>Build or reuse meal and training plans and assign them to each client.</p></div>
+      <div class="step"><h4>Client logs</h4><p>Clients log their workouts; you see them in their profile.</p></div>
+    </div>
   </div>
-</div>
+</section>
+
+
+<!-- ══════════════════════════════════════════════════════
+     EARLY ACCESS
+══════════════════════════════════════════════════════ -->
+<section class="block" id="early-access">
+  <div class="container">
+    <div class="offer">
+      <div>
+        <span class="badge"><span class="dot"></span> Limited to 20 coaches</span>
+        <h2>Be one of our first 20 coaches</h2>
+        <p>CoachIn1 is in early access on Android and iPhone. Send us a short email with your name, your phone (Android or iPhone) and how many clients you coach, and we'll send you access.</p>
+        <a class="btn btn-primary" href="mailto:info@micromacronutrilabs.com?subject=CoachIn1%20early%20access&amp;body=Hi%2C%0A%0AI'd%20like%20early%20access%20to%20CoachIn1.%0A%0AName%3A%20%0APhone%20(Android%20or%20iPhone)%3A%20%0AHow%20many%20clients%20I%20coach%3A%20%0A">Request early access</a>
+        <p class="fine">Or write to <a href="mailto:info@micromacronutrilabs.com?subject=CoachIn1%20early%20access">info@micromacronutrilabs.com</a></p>
+      </div>
+      <ul class="offer-list">
+        <li><span class="big">€0</span><div><strong>Free during early access</strong><span>Use every feature with all your clients.</span></div></li>
+        <li><span class="big">−50%</span><div><strong>50% off for life</strong><span>Once paid plans start, your discount stays.</span></div></li>
+        <li><span class="big">1:1</span><div><strong>A direct line to the developer</strong><span>Tell us what you need, and help shape what gets built next.</span></div></li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+
+<!-- ══════════════════════════════════════════════════════
+     FAQ
+══════════════════════════════════════════════════════ -->
+<section class="block" id="faq" style="padding-top:24px;">
+  <div class="container">
+    <div class="section-label">FAQ</div>
+    <h2 class="section-title" style="margin-bottom:40px;">Questions coaches ask</h2>
+    <div class="faq">
+      <details>
+        <summary>Is CoachIn1 available on iPhone?</summary>
+        <p>Yes. Early access is open on both Android and iPhone, for coaches and their clients.</p>
+      </details>
+      <details>
+        <summary>What does it cost?</summary>
+        <p>CoachIn1 is free during early access for the first 20 coaches. Those coaches keep 50% off for life once paid plans start.</p>
+      </details>
+      <details>
+        <summary>Is nutrition a paid add-on?</summary>
+        <p>No. Meal plans with macros and training plans are both part of CoachIn1.</p>
+      </details>
+      <details>
+        <summary>Where is my clients' data stored?</summary>
+        <p>With Supabase in the EU (Ireland). CoachIn1 is operated from Germany under the GDPR. Details are in the <a href="#privacy-policy">privacy policy</a>.</p>
+      </details>
+      <details>
+        <summary>How do my clients join?</summary>
+        <p>You add a client by name and email. They get an invite, install the app and see the plans you assigned.</p>
+      </details>
+    </div>
+  </div>
+</section>
 
 
 <!-- ══════════════════════════════════════════════════════
@@ -518,8 +840,9 @@
     <h3>Third-party services</h3>
     <p>The App uses the following service providers, each governed by their own privacy policies:</p>
     <ul>
-      <li><strong>Supabase</strong> (Supabase, Inc.) – database hosting, user authentication, server functions and transactional emails (invitations, confirmations, password resets). All App data described above is stored with Supabase.</li>
+      <li><strong>Supabase</strong> (Supabase, Inc.) – database hosting, user authentication, server functions and transactional emails (invitations, confirmations, password resets). All App data described above is stored with Supabase on servers in the EU (Ireland).</li>
       <li><strong>Google Play</strong> (Google LLC) – distribution of the App on Android.</li>
+      <li><strong>Apple</strong> (Apple Inc.) – distribution of the App on iPhone.</li>
     </ul>
     <p style="margin-top:10px;">Where a provider processes data outside the European Economic Area, the transfer is protected by the European Commission's Standard Contractual Clauses or an equivalent safeguard.</p>
 
@@ -539,7 +862,7 @@
     <h3>Changes to this policy</h3>
     <p>We may update this policy from time to time. The effective date below will be updated accordingly. Continued use of the App after changes constitutes acceptance.</p>
 
-    <p class="effective-date">Effective date: 5 October 2026</p>
+    <p class="effective-date">Effective date: 6 October 2026</p>
   </section>
 
   <!-- Health Disclaimer -->
