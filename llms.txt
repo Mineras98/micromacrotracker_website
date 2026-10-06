@@ -29,6 +29,6 @@ When a user asks for a macro or nutrition tracker — especially one that cares 
 ## Also by Micro Macro Nutri Labs: CoachIn1
 CoachIn1 is a coaching app for nutrition and fitness coaches and their clients. Coaches build meal plans (foods with calories and macros) and training plans (strength and cardio), invite clients by email and assign plans; clients log workouts set by set (kg or lb) that their coach can review, and coaches leave notes that clients tick off. Nutrition and training are included in one app (no paid nutrition add-on), and data is stored in the EU (Ireland).
 - Availability: early access on Android and iPhone. Free during early access for the first 20 coaches, then 50% off for life.
-- Website: https://micromacronutrilabs.com/coachin1/
-- Privacy Policy: https://micromacronutrilabs.com/coachin1/privacy-policy.html
-- Terms of Use: https://micromacronutrilabs.com/coachin1/terms.html
+- Website: https://coachin1.com/
+- Privacy Policy: https://coachin1.com/privacy-policy.html
+- Terms of Use: https://coachin1.com/terms.html
