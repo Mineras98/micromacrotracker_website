@@ -29,14 +29,14 @@
     "applicationCategory": "HealthApplication",
     "url": "https://micromacronutrilabs.com/coachin1/",
     "image": "https://micromacronutrilabs.com/coachin1/icon.png",
-    "description": "CoachIn1 is a coaching app for nutrition and fitness coaches. Coaches build meal plans (foods with calories, protein, carbs and fat) and training plans (strength and cardio sessions), invite clients by email and assign plans to them. Clients follow their plans, log workouts set by set, and record skipped or extra foods so their coach sees what actually happened.",
+    "description": "CoachIn1 is a coaching app for nutrition and fitness coaches. Coaches build meal plans (foods with calories, protein, carbs and fat) and training plans (strength and cardio sessions), invite clients by email and assign plans to them. Clients follow their plans and log workouts set by set in kg or lb, so their coach sees what was actually trained. Coaches can leave notes for clients, which clients tick off when done.",
     "featureList": [
       "Meal plan builder with macros",
       "Training plan builder (strength & cardio)",
       "Reusable plan library",
       "Client invites by email",
       "Workout logging (sets, reps, weight, cardio)",
-      "Meal deviation logging (skipped / extra foods)",
+      "Coach notes for clients",
       "Coach view of client logs"
     ],
     "publisher": {
@@ -402,7 +402,7 @@
 ══════════════════════════════════════════════════════ -->
 <section class="hero">
   <img src="/coachin1/icon.png" alt="CoachIn1 app icon" class="hero-icon" />
-  <div><span class="hero-badge">📱 Coming soon to Android</span></div>
+  <div><span class="hero-badge">📱 Early access on Android</span></div>
   <h1>Coach nutrition <em>and</em> training — in one app</h1>
   <p>CoachIn1 lets coaches build meal and training plans, hand them to clients, and see what was actually eaten and lifted. No spreadsheets, no chat threads full of screenshots.</p>
 </section>
@@ -424,7 +424,8 @@
         <li><span class="ic">🏋️</span><div><strong>Training plan builder</strong><span class="d">Strength exercises with sets and rep ranges, cardio with duration and intensity, organised into sessions.</span></div></li>
         <li><span class="ic">📚</span><div><strong>Plan library</strong><span class="d">Save plans as templates and reuse them across clients.</span></div></li>
         <li><span class="ic">✉️</span><div><strong>Client invites</strong><span class="d">Add a client by name and email — they get an invite and join your roster.</span></div></li>
-        <li><span class="ic">🔎</span><div><strong>Client overview</strong><span class="d">See each client's logged workouts and meal deviations at a glance.</span></div></li>
+        <li><span class="ic">📝</span><div><strong>Notes for clients</strong><span class="d">Leave notes after a call. Your client sees them first and ticks them off; you see what's done.</span></div></li>
+        <li><span class="ic">🔎</span><div><strong>Client overview</strong><span class="d">See every workout each client logged, set by set.</span></div></li>
       </ul>
     </div>
 
@@ -432,8 +433,8 @@
       <h3>🙋 For clients</h3>
       <ul class="role-list">
         <li><span class="ic">📋</span><div><strong>Your plans, always with you</strong><span class="d">The meal and training plan your coach assigned, on your phone.</span></div></li>
-        <li><span class="ic">✅</span><div><strong>Workout logging</strong><span class="d">Log each set's reps and weight, plus cardio sessions, straight from your plan.</span></div></li>
-        <li><span class="ic">🥗</span><div><strong>Meal deviations</strong><span class="d">Skipped a meal item or ate something extra? Log it so your coach knows.</span></div></li>
+        <li><span class="ic">✅</span><div><strong>Workout logging</strong><span class="d">Log each set's reps and weight in kg or lb, plus cardio sessions, straight from your plan.</span></div></li>
+        <li><span class="ic">📝</span><div><strong>Notes from your coach</strong><span class="d">What came up in your call, at the top of your plan. Tick each one off when it's done.</span></div></li>
         <li><span class="ic">🔐</span><div><strong>Invite-only</strong><span class="d">Client accounts are created by your coach's invite — no public profiles.</span></div></li>
       </ul>
     </div>
@@ -451,7 +452,7 @@
     <div class="step"><h4>Coach signs up</h4><p>Create a coach account with your email.</p></div>
     <div class="step"><h4>Invite clients</h4><p>Enter a client's name and email. They receive an invite to join.</p></div>
     <div class="step"><h4>Assign plans</h4><p>Build or reuse meal and training plans and assign them to each client.</p></div>
-    <div class="step"><h4>Client logs</h4><p>Clients log workouts and meal deviations; you see them in their profile.</p></div>
+    <div class="step"><h4>Client logs</h4><p>Clients log their workouts; you see them in their profile.</p></div>
   </div>
 </div>
 
@@ -476,11 +477,12 @@
       <li><strong>Meal plans</strong> – meals and foods with amounts, calories, protein, carbohydrates and fat, created by coaches and assigned to clients.</li>
       <li><strong>Training plans</strong> – training sessions, exercises, sets, rep ranges, cardio duration, intensity and notes, created by coaches and assigned to clients.</li>
       <li><strong>Workout logs</strong> – workouts clients record, including date, exercises, sets, repetitions, weights, cardio activities, durations and notes.</li>
-      <li><strong>Meal logs</strong> – foods clients record as skipped or eaten in addition to their plan, with optional calories and notes.</li>
+      <li><strong>Coach notes</strong> – short notes a coach leaves for a client, and when the client marked them done.</li>
+      <li><strong>Weight unit</strong> – whether a client logs weights in kilograms or pounds.</li>
       <li><strong>Authentication tokens</strong> – short-lived session tokens that keep you signed in. They are stored encrypted on your device.</li>
       <li><strong>Technical logs</strong> – our hosting provider automatically records technical data such as IP addresses and request timestamps when the App talks to our servers, for security and troubleshooting.</li>
     </ul>
-    <p style="margin-top:10px;">Workout and meal logs can reveal information about your health and fitness. We process this data only to provide the App's coaching features and only with your consent, which you give by entering it.</p>
+    <p style="margin-top:10px;">Workout logs can reveal information about your health and fitness. We process this data only to provide the App's coaching features and only with your consent, which you give by entering it.</p>
 
     <h3>Data we do NOT collect</h3>
     <ul>
@@ -492,7 +494,7 @@
 
     <h3>Who can see your data</h3>
     <ul>
-      <li><strong>If you are a client</strong>, every coach you are linked to can see your name, email address, the plans they assigned to you, and your workout and meal logs.</li>
+      <li><strong>If you are a client</strong>, every coach you are linked to can see your name, email address, the plans they assigned to you, your workout logs, and whether you marked their notes done.</li>
       <li><strong>If you are a coach</strong>, your name and the plans you assign are visible to the clients you assign them to.</li>
       <li>No one else using the App can see your data. Access is enforced on the server for every request.</li>
     </ul>
@@ -508,7 +510,7 @@
     <h3>Legal bases (GDPR)</h3>
     <ul>
       <li><strong>Performance of a contract</strong> (Art. 6(1)(b) GDPR) – providing the App and your account.</li>
-      <li><strong>Consent</strong> (Art. 6(1)(a) and Art. 9(2)(a) GDPR) – workout and meal logs that may contain health-related data. You can withdraw consent at any time by deleting the data or your account.</li>
+      <li><strong>Consent</strong> (Art. 6(1)(a) and Art. 9(2)(a) GDPR) – workout logs that may contain health-related data. You can withdraw consent at any time by deleting the data or your account.</li>
       <li><strong>Legitimate interests</strong> (Art. 6(1)(f) GDPR) – security and technical logs.</li>
       <li>Coaches who enter a client's name and email are responsible for having a lawful basis to do so, typically their existing coaching relationship with that client.</li>
     </ul>
@@ -524,7 +526,7 @@
     <h3>Data retention &amp; deletion</h3>
     <ul>
       <li>Your data is kept for as long as you have an account.</li>
-      <li>When a coach removes a client, the plans that coach made for the client are deleted. If the client is not linked to any other coach, the client profile and all of the client's workout and meal logs are deleted as well.</li>
+      <li>When a coach removes a client, the plans that coach made for the client are deleted. If the client is not linked to any other coach, the client profile and all of the client's workout logs and notes are deleted as well.</li>
       <li>To delete your account and all associated data, use the <a href="/coachin1/account-deletion.html">account deletion page</a> or contact us at the address below. Deletion is completed within 30 days.</li>
     </ul>
 
